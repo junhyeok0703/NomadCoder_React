@@ -1,0 +1,16 @@
+<html lang="en">
+  <head> </head>
+  <body>
+    <button id="btn">Click me</button>
+    <p id="num">total :</p>
+  </body>
+  <script>
+    const button = document.querySelector("#btn");
+    const span = document.querySelector("#num");
+    let cnt = 0;
+    button.addEventListener("click", () => {
+      cnt += 1;
+      span.innerHTML = `total : ${cnt}`;
+    });
+  </script>
+</html>
