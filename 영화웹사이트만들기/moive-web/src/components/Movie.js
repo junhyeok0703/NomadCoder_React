@@ -1,13 +1,14 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-const Movie = ({ title, img, genres }) => {
+const Movie = ({ id, title, img, genres }) => {
   return (
     <div>
-      <h1>{title}</h1>
+      <Link to={`/${id}`}>{title}</Link>
       <img src={img} />
       <ul>
         {genres.map((g) => (
-          <li>{g}</li>
+          <li key={g}>{g}</li>
         ))}
       </ul>
     </div>
