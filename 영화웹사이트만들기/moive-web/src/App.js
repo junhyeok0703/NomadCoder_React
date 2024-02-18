@@ -1,8 +1,14 @@
-import { useState } from "react";
-
+import { Route, Routes } from "react-router-dom";
+import Home from "./routes/Home";
 function App() {
-  const [loading, setLoading] = useState(false);
-  return <div>{loading ? <h1>loading...</h1> : null}</div>;
+  return (
+    <Routes>
+      <Route path="/" element={<Home />} />
+
+      <Route path="/" element={<Home />} />
+      <Route path="/" element={<Home />} />
+    </Routes>
+  );
 }
 
 export default App;
