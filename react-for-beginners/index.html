@@ -1,28 +1,42 @@
+<!DOCTYPE html>
 <html lang="en">
-  <head> </head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React App</title>
+  </head>
   <body>
     <div id="root"></div>
+    <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
+    <script type="text/babel">
+      function App() {
+        const [min, setMin] = React.useState();
+
+        const onChange = (e) => {
+          setMin(e.target.value);
+        };
+        return (
+          <div>
+            <h1>super converter</h1>
+            <label htmlFor="min">Min</label>
+            <input
+              value={min}
+              className="hi"
+              placeholder="min"
+              type="number"
+              onChange={onChange}
+            />
+
+            <label htmlFor="Hours">hours</label>
+            <input value={min / 60} placeholder="Hours" type="number" />
+          </div>
+        );
+      }
+
+      const root = document.getElementById("root");
+      ReactDOM.render(<App />, root);
+    </script>
   </body>
-  <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
-  <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
-  <script>
-    const root = document.getElementById("root");
-    const span = React.createElement(
-      "span",
-      { id: "sexy-span", style: { color: "red" } },
-      "hello"
-    );
-    const button = React.createElement(
-      "button",
-      {
-        id: "btn",
-        onclick: () => {
-          console.log("clicked");
-        },
-      },
-      "클릭"
-    );
-    const warpper = React.createElement("div", null, [span, button]);
-    ReactDOM.render(warpper, root);
-  </script>
 </html>
